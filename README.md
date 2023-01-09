@@ -1,2 +1,2 @@
 # curso-java-script
-Conceitos e exercícios que aprendi pela Internet.
+Conceitos e exercícios que aprendi no YouTube pelo canal Dev Aprender.
