@@ -334,9 +334,10 @@ function criarCelular(marcaCelular, tamanhoTela, capacidadeBateria) {
     }
 }
 
-const celular1 = criarCelular("ASUS", 5.5, 5000);
-const celular2 = criarCelular("Samsung", 5.0, 4000);
-let celulares = [celular1,celular2];
+let celulares = [
+    criarCelular("ASUS", 5.5, 5000),
+    criarCelular("Samsung", 5.0, 4000)
+];
 console.log(celulares);
 
 for (let cell of celulares) {
@@ -377,3 +378,116 @@ function getRandomInt(min, max) {
 }
 console.log(getRandomInt(2,5));
 
+// Dicas de Strings - Ver usos na documentação oficial
+// Tipo Primitivo
+const mensagem = "Olá Mundo!";
+console.log(typeof(mensagem));
+
+// Tipo Objeto
+const outraMensagem = new String("Bom Dia!");
+console.log(typeof(outraMensagem));
+
+console.log(mensagem.indexOf("M"));
+console.log(mensagem[4]);
+csl = console;
+csl.log(outraMensagem);
+csl.log(mensagem)
+
+for (i=0; i<mensagem.length; i++) {
+    csl.log(mensagem[i]);
+}
+
+csl.log(outraMensagem.split(' '));
+
+// Escape Sequence - Ver outros na documentação
+const escapeSequence = "Testando escape... \n é assim que pula linha"
+csl.log(escapeSequence);
+
+// Template Literal
+const email = 
+`Olá, meu nome é ${nome} ${pessoa.sobrenome}.
+Meu apelido é ${pessoa.name}, tenho ${pessoa.age} anos.
+
+Isso foi um teste do Template Literal...`
+
+csl.log(email);
+
+// Exercício 11: Criar Objeto Endereço(Rua, Cidade, CEP) e uma f(exibirEndereco)
+class Endereco {
+    constructor(cep, rua, cidade) {
+        this.cep = cep;
+        this.rua = rua;
+        this.cidade = cidade;
+    }
+}
+
+const endereco1 = new Endereco(50690080, "R. Tacima", "Recife");
+
+function exibirEndereco() {
+    for (let key in endereco1) {
+        csl.log(key, endereco1[key]);
+    }
+}
+
+exibirEndereco();
+
+// Exercício 12: Criar um segundo objeto e comparar...
+// Se as propriedades são iguais
+// Se a referência do objeto aponta para o mesmo local na memória
+const endereco2 = new Endereco(50690080, "R. Tacima", "Recife");
+
+function saoIguais(endereco1, endereco2) {
+    return [
+        endereco1.cep === endereco2.cep &&
+        endereco1.rua === endereco2.rua &&
+        endereco1.cidade === endereco2.cidade
+    ];
+}
+
+function temEnderecoMemoriaIguais(endereco1, endereco2) {
+    return endereco1 === endereco2;
+}
+
+csl.log(saoIguais(endereco1, endereco2));
+csl.log(temEnderecoMemoriaIguais(endereco1, endereco2));
+
+// Exercício 13: Criar um objeto Postagem
+let postagem = {
+    titulo: "Criando Objeto",
+    mensagem: "Aqui vamos criar um objeto",
+    autor: "Jonathan",
+    visualizacoes: 120,
+    comentarios: [
+        { autor: "Bruno", mensagem: "Muito Bom!" },
+        { autor: "Cintia", mensagem: "Gostei!" }
+    ],
+    estaAoVivo: false
+}
+
+for (let key in postagem) {
+    if (key === 'comentarios') {
+        for (let key2 of postagem.comentarios) {
+            csl.log(key, key2);
+        }
+    } else {
+        csl.log(key, postagem[key]);
+    }
+}
+
+// Adicionando Elementos no Array
+const numeros = [1,2,3];
+csl.log(numeros);
+
+// No Início
+numeros.unshift(0)
+csl.log(numeros);
+
+// No Meio
+numeros.splice(1,0,"a");
+csl.log(numeros);
+
+// No Fim
+numeros.push(4);
+csl.log(numeros);
+
+// 
