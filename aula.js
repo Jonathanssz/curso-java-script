@@ -490,4 +490,77 @@ csl.log(numeros);
 numeros.push(4);
 csl.log(numeros);
 
-// 
+// Encontrando Elementos no tipo Primitivos
+csl.log(numeros.indexOf(2));
+csl.log(numeros.indexOf("a") !== -1);
+csl.log(numeros.includes(5));
+
+// Encontrando Elementos no tipo Referência
+const marca1 = celulares.find(function(marca) {
+    return marca.marcaCelular === "ASUS";
+});
+
+csl.log(marca1);
+
+// Utilizando Arrow Function
+const marca2 = celulares.find((marca) => marca.marcaCelular === "Samsung");
+
+csl.log(marca2);
+
+// Removendo Elementos no Array
+csl.log(numeros);
+
+// No Meio
+numeros.splice(1,1);
+csl.log(numeros);
+
+// No Início
+numeros.shift();
+csl.log(numeros);
+
+// No Final
+numeros.pop();
+csl.log(numeros);
+
+// Esvaziando um Array
+numeros.length = 0
+csl.log(numeros);
+
+// Combinando e Cortando Arrays
+const numeros1 = [1,2,3];
+const numeros2 = [4,5,6];
+
+const combinado = numeros1.concat(numeros2);
+csl.log(combinado);
+const cortado = combinado.slice(3);
+csl.log(cortado);
+
+// Utilizando o Spread
+const combinadoS = [...numeros1, ...numeros2];
+csl.log(combinadoS);
+const adicionando = [...numeros1, '%', ...numeros2];
+csl.log(adicionando);
+
+// Percorrendo Arrays com o ForEach
+adicionando.forEach((numeros, indice) => csl.log(numeros, indice));
+
+// Utilizando Join e fazendo Slug
+// Em Array
+csl.log(adicionando.join(','));
+
+// Em String
+const frase = mensagem + ' ' + outraMensagem
+csl.log(frase);
+
+const split = frase.split(' '); // Transforma em Array
+csl.log(split);
+
+csl.log(split.join('-'));
+
+// Exercício 14: Pedindo dados do Usuário - Usar no Navegador
+// let idade = parseInt(prompt("Qual a sua idade ?"));
+
+// if (idade < 18) {
+//     alert("Você é menor de idade!");
+// } else { alert("Você é maior de idade!"); }
+
